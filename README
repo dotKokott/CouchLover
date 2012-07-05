@@ -1,1 +1,22 @@
 Remote control app for Android + the server which needs to be started on the remote pc
+
+Todos:
+Client
+-------------
+* Use delta change for touchpad inputs -> done
+* add left right click support
+* add keyboard support
+* server selector (broadcast)
+* acceptable app design
+
+
+Server
+-------------
+* stable network connection
+* use broadcast
+* ability to use the remote screen as a direct input
+* acceptable server design (tray)
+* show connected devices
+
+
+
