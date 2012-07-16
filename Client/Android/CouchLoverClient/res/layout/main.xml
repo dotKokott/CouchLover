@@ -4,9 +4,25 @@
     android:layout_height="fill_parent"
     android:orientation="vertical" >
 
-    <TextView
+    <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="@string/hello" />
+        android:layout_weight="0.11" >
+
+        <Button
+            android:id="@+id/butRightClick"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:onClick="rightClick"
+            android:text="Button" />
+
+        <Button
+            android:id="@+id/butLeftClick"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_marginLeft="410dp"
+            android:onClick="leftClick"
+            android:text="Button" />
 
-</LinearLayout>
+    </LinearLayout>
+</LinearLayout>

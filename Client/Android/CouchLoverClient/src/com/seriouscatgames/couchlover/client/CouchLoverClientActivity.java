@@ -3,6 +3,7 @@ package com.seriouscatgames.couchlover.client;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.MotionEvent;
+import android.view.View;
 import android.widget.Toast;
 import com.seriouscatgames.couchlover.client.net.*;
 
@@ -54,6 +55,14 @@ public class CouchLoverClientActivity extends Activity {
         }
         return false;
     }
-      
+
+    public void rightClick(View view) {
+        client.SendMessage("rightClick:");
+    }
+    
+    public void leftClick(View view) {
+    	client.SendMessage("leftClick:"); 
+    }    
+    
     
 }
