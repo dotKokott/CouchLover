@@ -4,7 +4,7 @@ Todos:
 Client
 -------------
 * Use delta change for touchpad inputs -> done
-* add left right click support
+* add left right click support -> done
 * add keyboard support
 * server selector (broadcast)
 * acceptable app design
