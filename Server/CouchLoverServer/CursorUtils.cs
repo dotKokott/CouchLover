@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace CouchLoverServer
 {
-    class CursorUtils
+    class InputUtils
     {
         [DllImport("user32.dll", CharSet = CharSet.Auto, CallingConvention = CallingConvention.StdCall)]
         public static extern void mouse_event(long dwFlags, long dx, long dy, long cButtons, long dwExtraInfo);
@@ -36,6 +36,11 @@ namespace CouchLoverServer
 
             if(button == MouseButtons.Right)
                 mouse_event(MOUSEEVENTF_RIGHTDOWN | MOUSEEVENTF_RIGHTUP, x, y, 0, 0);
+        }
+
+        public static void SendKey(string Key)
+        {
+            SendKey(Key);
         }
     }
 
