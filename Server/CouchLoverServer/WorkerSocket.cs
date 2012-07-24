@@ -118,7 +118,8 @@ namespace CouchLoverServer
                     InputUtils.MouseClick(MouseButtons.Right, Cursor.Position.X, Cursor.Position.Y);
                     break;
                 case "sendKey":
-                    InputUtils.SendKey(parameters[0]);                    
+                    InputUtils.SendKey(parameters[0]);
+                    break;
             }
         }
     }

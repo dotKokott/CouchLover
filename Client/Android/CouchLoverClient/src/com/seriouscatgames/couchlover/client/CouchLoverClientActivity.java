@@ -1,9 +1,14 @@
 package com.seriouscatgames.couchlover.client;
 
 import android.app.Activity;
+import android.inputmethodservice.InputMethodService;
+import android.inputmethodservice.Keyboard;
 import android.os.Bundle;
+import android.os.ResultReceiver;
+import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
 import com.seriouscatgames.couchlover.client.net.*;
 
@@ -55,6 +60,15 @@ public class CouchLoverClientActivity extends Activity {
         }
         return false;
     }
+        
+    @Override
+    public boolean onKeyUp(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_MENU) {
+            InputMethodManager imm = (InputMethodManager) this.getSystemService(getApplicationContext().INPUT_METHOD_SERVICE);
+            Toast.makeText(getApplicationContext(), "MENU PRESSED", Toast.LENGTH_LONG).show();
+        }
+        return true;
+    }    
 
     public void rightClick(View view) {
         client.SendMessage("rightClick:");
