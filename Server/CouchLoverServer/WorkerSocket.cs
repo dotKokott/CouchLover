@@ -109,16 +109,16 @@ namespace CouchLoverServer
                     //CursorUtils.MouseClick(MouseButtons.Left, parameters[0], parameters[1]);
                     break;
                 case "mouseMove":
-                    InputUtils.MoveBy(int.Parse(parameters[0]), int.Parse(parameters[1]));
+                    Utils.MoveBy(int.Parse(parameters[0]), int.Parse(parameters[1]));
                     break;
                 case "leftClick":
-                    InputUtils.MouseClick(MouseButtons.Left, Cursor.Position.X, Cursor.Position.Y);
+                    Utils.MouseClick(MouseButtons.Left, Cursor.Position.X, Cursor.Position.Y);
                     break;
                 case "rightClick":
-                    InputUtils.MouseClick(MouseButtons.Right, Cursor.Position.X, Cursor.Position.Y);
+                    Utils.MouseClick(MouseButtons.Right, Cursor.Position.X, Cursor.Position.Y);
                     break;
                 case "sendKey":
-                    InputUtils.SendKey(parameters[0]);
+                    Utils.SendKey(parameters[0]);
                     break;
             }
         }

@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 
 namespace CouchLoverServer
 {
-    class InputUtils
+    class Utils
     {
         [DllImport("user32.dll", CharSet = CharSet.Auto, CallingConvention = CallingConvention.StdCall)]
         public static extern void mouse_event(long dwFlags, long dx, long dy, long cButtons, long dwExtraInfo);
@@ -41,6 +41,36 @@ namespace CouchLoverServer
         public static void SendKey(string Key)
         {
             SendKey(Key);
+        }
+
+        public static Bitmap GetCurrentScreen(int width, int height)
+        {
+            Rectangle bounds = Screen.GetBounds(Point.Empty);
+            Bitmap screen = new Bitmap(bounds.Width, bounds.Height);
+
+            using (Graphics g = Graphics.FromImage(screen))
+            {
+                g.CopyFromScreen(Point.Empty, Point.Empty, bounds.Size);
+            }
+
+            return ResizeImage(screen, width, height);
+        }
+
+        public static Bitmap ResizeImage(Image sourceImage, int width, int height)
+        {
+            Bitmap img = new Bitmap(width, height);
+            using(Graphics g = Graphics.FromImage(img))
+            {
+                g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
+                g.DrawImage(sourceImage, new Rectangle(0,0, width,height));
+            }
+
+            return img;
+        }
+
+        public static Bitmap ResizeImage(Image sourceImage, int percent)
+        {
+            return ResizeImage(sourceImage, ((percent / 100) * sourceImage.Width), ((percent / 100) * sourceImage.Height));
         }
     }
 
