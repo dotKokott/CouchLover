@@ -4,22 +4,26 @@
     android:layout_height="fill_parent"
     android:orientation="horizontal" >
 
+     <Button
+		    android:id="@+id/butLeftClick"
+		    android:layout_width="100dp"
+		    android:layout_height="100dp"            
+		    android:onClick="leftClick"
+		    android:text="Left"
+		    android:layout_centerVertical="true"		    	   
+     	/>
+    
+    
         <Button
             android:id="@+id/butRightClick"
-            android:layout_width="wrap_content"
-            android:layout_height="fill_parent"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:onClick="rightClick"
-            android:text="Button" 
-            android:layout_gravity="left"
+            android:text="Right"             
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
             />
 
-        <Button
-            android:id="@+id/butLeftClick"
-            android:layout_width="wrap_content"
-            android:layout_height="fill_parent"            
-            android:onClick="leftClick"
-            android:text="Button" 
-            android:layout_alignParentRight="true"
-            />
+
 
 </RelativeLayout>
