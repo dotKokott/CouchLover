@@ -8,6 +8,7 @@ import android.os.ResultReceiver;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.Window;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Toast;
 import com.seriouscatgames.couchlover.client.net.*;
@@ -23,7 +24,7 @@ public class CouchLoverClientActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-        
+        //this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         startX = 0;
         startY = 0;
         
