@@ -5,6 +5,7 @@ using System.Net;
 using System.Net.Sockets;
 using System.IO;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 
 namespace CouchLoverServer
@@ -38,7 +39,7 @@ namespace CouchLoverServer
             }
             catch (SocketException se)
             {
-                Console.WriteLine(se.Message);
+                Debug.WriteLine(se.Message);
             }
         }
 
@@ -73,7 +74,7 @@ namespace CouchLoverServer
             }
             catch (ObjectDisposedException)
             {
-                Console.WriteLine("OnDataReceived: Socket has been closed");
+                Debug.WriteLine("OnDataReceived: Socket has been closed");
                 //server.RemoveWorkerSocket(this);
             }
             catch (SocketException se)
@@ -81,18 +82,18 @@ namespace CouchLoverServer
                 if (se.ErrorCode == 10054) // Connection reset by peer
                 {
                     string msg = "Client Disconnected";
-                    Console.WriteLine(msg);
+                    Debug.WriteLine(msg);
                     //server.RemoveWorkerSocket(this);
                 }
                 else
                 {
-                    Console.WriteLine(se.Message);
+                    Debug.WriteLine(se.Message);
                     //server.RemoveWorkerSocket(this);
                 }
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.Message);
+                Debug.WriteLine(e.Message);
                 //server.RemoveWorkerSocket(this);
             }
         }
